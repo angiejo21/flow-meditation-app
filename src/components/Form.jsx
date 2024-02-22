@@ -6,51 +6,36 @@ import NumberInput from "./NumberInput";
 import Info from "./Info";
 
 import { selectPractice } from "../features/meditationSlice";
+import ButtonStart from "./ButtonStart";
 
 function Form() {
   const { data, selectedPractice, selectedExercise } = useSelector(
-    (state) => state.meditation,
+    (store) => store.meditation,
   );
   const dispatch = useDispatch();
 
-  console.log(selectedPractice);
-  console.log(selectedExercise);
-
-  function handlerButton(e, action, payload) {
-    e.preventDefault();
-    dispatch(action(payload));
-  }
-
   return (
     <form>
-      {data.map((el) => (
+      {data.map((practice) => (
         <Button
           styled="primary"
-          key={el.name}
-          onClick={(e) => handlerButton(e, selectPractice, el)}
+          key={practice.name}
+          onClick={() => dispatch(selectPractice(practice))}
         >
-          {el.name}
+          {practice.name}
         </Button>
       ))}
+
       {selectedPractice && <SelectInput />}
-      {selectedExercise && (
-        <>
-          <Info />
-          <NumberInput />
-        </>
-      )}
-      {selectedPractice.name === "breathing" && (
-        <p>{selectedExercise.duration / selectedExercise.step} reps</p>
-      )}
+
+      {selectedExercise && <Info />}
+
+      {selectedExercise && <NumberInput />}
 
       <Button type="link" pageTo="/" styled="secondary">
         &larr; Back
       </Button>
-      {selectedPractice && (
-        <Button type="link" pageTo="/practice" styled="primary">
-          Start
-        </Button>
-      )}
+      {selectedPractice && <ButtonStart />}
     </form>
   );
 }

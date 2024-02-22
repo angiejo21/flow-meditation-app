@@ -13,6 +13,11 @@ function Button({ styled, type, pageTo, onClick, children }) {
       "m-4 p-5 rounded-full bg-red-500 shadow-md hover:shadow-sm hover:bg-red-600 hover:border-0 transition-all",
   };
 
+  function handleClick(e) {
+    e.preventDefault();
+    onClick();
+  }
+
   if (type === "link")
     return (
       <Link to={pageTo} className={styles[styled]}>
@@ -21,7 +26,7 @@ function Button({ styled, type, pageTo, onClick, children }) {
     );
 
   return (
-    <button className={styles[styled]} onClick={onClick}>
+    <button className={styles[styled]} onClick={(e) => handleClick(e)}>
       {children}
     </button>
   );

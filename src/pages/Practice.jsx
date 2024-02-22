@@ -1,24 +1,32 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FaStop, FaPlay, FaPause } from "react-icons/fa";
 
-import { playPause, stop } from "../features/timerSlice";
+import { playPause, reset } from "../features/timerSlice";
 
 import Button from "../components/Button";
 import Timer from "../components/Timer";
 
 function Practice() {
-  const { minutes, seconds, isTimerOn } = useSelector((store) => store.timer);
+  const { isTimerOn } = useSelector((store) => store.timer);
+  const { seconds } = useSelector(
+    (store) => store.meditation.selectedExercise.duration,
+  );
   const dispatch = useDispatch();
 
   return (
     <div>
-      <Timer minutes={minutes} seconds={seconds} isTimerOn={isTimerOn} />
+      <Timer />
       <Button styled="control" onClick={() => dispatch(playPause())}>
         {isTimerOn ? <FaPause /> : <FaPlay />}
       </Button>
-      <Button styled="reset" onClick={() => dispatch(stop())}>
+      <Button styled="reset" onClick={() => dispatch(reset(seconds))}>
         <FaStop />
       </Button>
+      {!isTimerOn && (
+        <Button type="link" pageTo="/settings" styled="secondary">
+          &larr; Back
+        </Button>
+      )}
     </div>
   );
 }

@@ -25,7 +25,10 @@ const meditationSlice = createSlice({
       if (
         state.selectedPractice.name === "meditation" &&
         state.selectedExercise.id.slice(1) !== "00" &&
-        action.payload < state.selectedExercise.duration
+        action.payload <
+          state.selectedPractice.list.filter(
+            (el) => el.id === state.selectedExercise.id,
+          )[0].duration.minutes
       )
         return;
       if (
@@ -33,7 +36,15 @@ const meditationSlice = createSlice({
         action.payload < state.selectedExercise.duration.default
       )
         return;
-      state.selectedExercise.duration = action.payload;
+      if (state.selectedPractice.name === "meditation") {
+        state.selectedExercise.duration.minutes = +action.payload;
+        state.selectedExercise.duration.seconds = +action.payload * 60;
+      } else {
+        state.selectedExercise.duration.seconds = action.payload;
+        state.selectedExercise.duration.minutes = Math.floor(
+          action.payload / 60,
+        );
+      }
     },
   },
 });

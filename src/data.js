@@ -7,21 +7,21 @@ export const data = [
       {
         id: "M00",
         name: "Unguided meditation",
-        duration: DEFAULT_DURATION,
+        duration: { minutes: DEFAULT_DURATION, seconds: DEFAULT_DURATION * 60 },
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cum molestias commodi beatae provident ullam, eligendi molestiae velit. Unde ex numquam alias eligendi harum cum!",
       },
       {
         id: "M01",
         name: "Meditation 1",
-        duration: 10,
+        duration: { minutes: 10, seconds: 10 * 60 },
         description:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum assumenda enim, ducimus ex impedit nesciunt quod atque fugiat ipsa quisquam magnam dolor perspiciatis porro fugit!",
       },
       {
         id: "M02",
         name: "Meditation 2",
-        duration: 15,
+        duration: { minutes: 15, seconds: 15 * 60 },
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae laboriosam at facere nihil nobis. Perspiciatis sed necessitatibus repudiandae odio reprehenderit ipsum cupiditate nihil et blanditiis!",
       },
@@ -34,7 +34,10 @@ export const data = [
       {
         id: "B00",
         name: "4-4-4",
-        duration: 12 * DEFAULT_REPETITIONS,
+        duration: {
+          minutes: 12 * DEFAULT_REPETITIONS * 60,
+          seconds: 12 * DEFAULT_REPETITIONS,
+        },
         step: 12,
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, beatae?",
@@ -42,7 +45,10 @@ export const data = [
       {
         id: "B01",
         name: "4-8",
-        duration: 12 * DEFAULT_REPETITIONS,
+        duration: {
+          minutes: 12 * DEFAULT_REPETITIONS * 60,
+          seconds: 12 * DEFAULT_REPETITIONS,
+        },
         step: 12,
         description:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, ducimus.",
@@ -50,7 +56,10 @@ export const data = [
       {
         id: "B02",
         name: "6-6",
-        duration: 12 * DEFAULT_REPETITIONS,
+        duration: {
+          minutes: 12 * DEFAULT_REPETITIONS * 60,
+          seconds: 12 * DEFAULT_REPETITIONS,
+        },
         step: 12,
         description:
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus.",
@@ -58,7 +67,10 @@ export const data = [
       {
         id: "B03",
         name: "4-7-8",
-        duration: 19 * DEFAULT_REPETITIONS,
+        duration: {
+          minutes: Math.floor(190 / 60),
+          seconds: 19 * DEFAULT_REPETITIONS,
+        },
         step: 19,
         description:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, dignissimos.",

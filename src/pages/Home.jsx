@@ -8,7 +8,7 @@ function Home() {
       <Logo />
       <IntroText />
       <Button type="link" pageTo="/settings" styled="primary">
-        Start
+        Begin your journey
       </Button>
     </>
   );
