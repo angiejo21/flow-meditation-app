@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import timerSlice from "./features/timerSlice";
 import timerReducer from "./features/timerSlice";
+import meditationReducer from "./features/meditationSlice";
 
 const store = configureStore({
   reducer: {
     timer: timerReducer,
+    meditation: meditationReducer,
   },
 });
 

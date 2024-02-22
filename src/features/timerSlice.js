@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const DEFAULT_MIN = 5;
+import { DEFAULT_DURATION } from "../config";
 
 const initialState = {
-  minutes: DEFAULT_MIN,
-  seconds: DEFAULT_MIN * 60,
+  minutes: DEFAULT_DURATION,
+  seconds: DEFAULT_DURATION * 60,
   isTimerOn: false,
 };
 
@@ -13,8 +12,8 @@ const timerSlice = createSlice({
   initialState,
   reducers: {
     stop(state, action) {
-      state.minutes = DEFAULT_MIN;
-      state.seconds = DEFAULT_MIN * 60;
+      state.minutes = DEFAULT_DURATION;
+      state.seconds = DEFAULT_DURATION * 60;
       state.isTimerOn = false;
     },
     playPause(state, action) {

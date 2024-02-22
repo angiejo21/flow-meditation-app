@@ -1,11 +1,21 @@
+import { useDispatch, useSelector } from "react-redux";
+
+import { selectExercise } from "../features/meditationSlice";
+
 function SelectInput() {
-  const options = Array.from({ length: 5 }, (val, index) => index + 1);
+  const {
+    selectedPractice: { list },
+  } = useSelector((state) => state.meditation);
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <label>Label</label>
-      <select>
-        {options.map((option) => (
-          <option key={option}>{option}</option>
+      <label>Select an exercise</label>
+      <select onChange={(e) => dispatch(selectExercise(e.target.value))}>
+        {list.map((option) => (
+          <option key={option.id} value={option.id}>
+            {option.name}
+          </option>
         ))}
       </select>
     </div>

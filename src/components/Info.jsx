@@ -1,11 +1,11 @@
+import { useSelector } from "react-redux";
+
 function Info() {
+  const { selectedExercise } = useSelector((state) => state.meditation);
+
   return (
     <div>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, iusto?
-        Impedit unde exercitationem facilis minus, necessitatibus labore?
-        Architecto labore corrupti nam aperiam tempore suscipit dolore!
-      </p>
+      <p>{selectedExercise.description}</p>
     </div>
   );
 }
