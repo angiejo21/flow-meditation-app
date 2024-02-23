@@ -1,30 +1,44 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { FaStop, FaPlay, FaPause } from "react-icons/fa";
 
-import { countdown } from "../features/timerSlice";
+import { playPause, reset } from "../features/timerSlice";
+
+import Button from "../components/Button";
+import Countdown from "../components/Countdown";
+import Audio from "./Audio";
 
 function Timer() {
-  const { seconds, isTimerOn } = useSelector((store) => store.timer);
+  const { isTimerOn } = useSelector((store) => store.timer);
+  const { soundData } = useSelector((store) => store.sound);
+  const { seconds } = useSelector(
+    (store) => store.meditation.selectedExercise.duration,
+  );
   const dispatch = useDispatch();
 
-  const min = Math.floor(seconds / 60);
-  const sec = seconds % 60;
-
-  const timerText = `${min < 10 ? `0${min}` : min}:${sec < 10 ? `0${sec}` : sec}`;
-
-  useEffect(
-    function () {
-      if (isTimerOn && seconds > 0) {
-        const timer = setInterval(() => {
-          dispatch(countdown());
-        }, 1000);
-        return () => clearInterval(timer);
-      } else return;
-    },
-    [seconds, isTimerOn, dispatch],
+  return (
+    <>
+      <Countdown />
+      <Button styled="control" onClick={() => dispatch(playPause())}>
+        {isTimerOn ? <FaPause /> : <FaPlay />}
+      </Button>
+      <Button styled="reset" onClick={() => dispatch(reset(seconds))}>
+        <FaStop />
+      </Button>
+      {!isTimerOn && (
+        <Button type="link" pageTo="/settings" styled="secondary">
+          &larr; Back
+        </Button>
+      )}
+      {soundData.map((sound) => (
+        <Audio
+          src={sound.src}
+          volume={sound.volume}
+          isPlaying={sound.isPlaying}
+          key={sound.name}
+        />
+      ))}
+    </>
   );
-
-  return <div>{timerText}</div>;
 }
 
 export default Timer;

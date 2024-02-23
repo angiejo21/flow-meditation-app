@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { DEFAULT_DURATION } from "../config";
-import { data } from "../data";
+import { practiceData as data } from "../data/practiceData";
 
 const initialState = {
   data,

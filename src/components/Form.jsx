@@ -1,36 +1,28 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Button from "./Button";
-import SelectInput from "./SelectInput";
-import NumberInput from "./NumberInput";
+import InputSelect from "./InputSelect";
+import InputNumber from "./InputNumber";
+import InputPractice from "./InputPractice";
 import Info from "./Info";
 
-import { selectPractice } from "../features/meditationSlice";
 import ButtonStart from "./ButtonStart";
+import Sounds from "./Sounds";
 
 function Form() {
-  const { data, selectedPractice, selectedExercise } = useSelector(
+  const { selectedPractice, selectedExercise } = useSelector(
     (store) => store.meditation,
   );
-  const dispatch = useDispatch();
 
   return (
     <form>
-      {data.map((practice) => (
-        <Button
-          styled="primary"
-          key={practice.name}
-          onClick={() => dispatch(selectPractice(practice))}
-        >
-          {practice.name}
-        </Button>
-      ))}
+      {!selectedPractice ? <InputPractice /> : <Sounds />}
 
-      {selectedPractice && <SelectInput />}
+      {selectedPractice && <InputSelect />}
 
       {selectedExercise && <Info />}
 
-      {selectedExercise && <NumberInput />}
+      {selectedExercise && <InputNumber />}
 
       <Button type="link" pageTo="/" styled="secondary">
         &larr; Back
