@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaStop, FaPlay, FaPause } from "react-icons/fa";
 
 import { playPause, reset } from "../features/timerSlice";
+import { resetRepetition } from "../features/meditationSlice";
 
 import Button from "../components/Button";
 import Countdown from "../components/Countdown";
@@ -13,13 +14,20 @@ function Timer() {
   );
   const dispatch = useDispatch();
 
+  function resetTimer() {
+    dispatch(reset(seconds));
+    dispatch(resetRepetition());
+  }
+
   return (
     <>
       <Countdown />
+
       <Button styled="control" onClick={() => dispatch(playPause())}>
         {isTimerOn ? <FaPause /> : <FaPlay />}
       </Button>
-      <Button styled="reset" onClick={() => dispatch(reset(seconds))}>
+
+      <Button styled="reset" onClick={() => resetTimer()}>
         <FaStop />
       </Button>
       {!isTimerOn && (

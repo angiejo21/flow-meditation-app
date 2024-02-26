@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { DEFAULT_DURATION } from "../config";
+
 import { practiceData as data } from "../data/practiceData";
 
 const initialState = {
@@ -15,6 +15,7 @@ const meditationSlice = createSlice({
     selectPractice(state, action) {
       state.selectedPractice = action.payload;
       state.selectedExercise = state.selectedPractice.list[0];
+      console.log(state.selectedExercise, state.selectedPractice);
     },
     selectExercise(state, action) {
       state.selectedExercise = state.selectedPractice.list.filter(
@@ -33,7 +34,7 @@ const meditationSlice = createSlice({
         return;
       if (
         state.selectedPractice.name === "breathing" &&
-        action.payload < state.selectedExercise.duration.default
+        action.payload < state.selectedExercise.step
       )
         return;
       if (state.selectedPractice.name === "meditation") {
@@ -49,33 +50,42 @@ const meditationSlice = createSlice({
       }
     },
     defineRepetitionState(state, action) {
-      //passo lo step
-      if (state.selectedExercise.progression.count <= 1)
-        state.selectedExercise.progression.count = state.selectedExercise.step;
-      else
+      //se il conteggio del set dei secondi è sotto zero => ricomincia altrimenti lo abbassa
+      if (state.selectedExercise.progression.count < 1) {
+        state.selectedExercise.progression.count =
+          state.selectedExercise.step - 1;
+      } else {
         state.selectedExercise.progression.count =
           state.selectedExercise.progression.count - 1;
+      }
+      //se il conteggio è nella fascia 'inhale' setta lo stato
       if (
-        state.selectedExercise.progression.count >
+        state.selectedExercise.progression.count === 0 ||
+        (state.selectedExercise.progression.count >
           state.selectedExercise.progression.inhale[0] &&
-        state.selectedExercise.progression.count <=
-          state.selectedExercise.progression.inhale[1]
+          state.selectedExercise.progression.count <
+            state.selectedExercise.progression.inhale[1])
       ) {
         state.selectedExercise.progression.state = "inhale";
       } else if (
+        //altrimenti controlla se è nella fascia 'exhale' e se lo è setta lo stato
         state.selectedExercise.progression.count >
           state.selectedExercise.progression.exhale[0] &&
-        state.selectedExercise.progression.count <=
+        state.selectedExercise.progression.count <
           state.selectedExercise.progression.exhale[1]
       ) {
         state.selectedExercise.progression.state = "exhale";
       } else {
+        //altrimenti mette in pausa
         state.selectedExercise.progression.state = "hold";
       }
-      console.log(
-        state.selectedExercise.progression.count,
-        state.selectedExercise.progression.state,
-      );
+      // console.log(
+      //   state.selectedExercise.progression.count,
+      //   state.selectedExercise.progression.state,
+      // );
+    },
+    resetRepetition(state, action) {
+      state.selectedExercise.progression.count = state.selectedExercise.step;
     },
   },
 });
@@ -85,6 +95,7 @@ export const {
   selectExercise,
   selectDuration,
   defineRepetitionState,
+  resetRepetition,
 } = meditationSlice.actions;
 
 export default meditationSlice.reducer;

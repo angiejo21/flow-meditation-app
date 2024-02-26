@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { countdown } from "../features/timerSlice";
+import { countdown, timerOff } from "../features/timerSlice";
+import { defineRepetitionState } from "../features/meditationSlice";
 import SvgMeditation from "./SvgMeditation";
 import SvgBreathing from "./SvgBreathing";
-import { defineRepetitionState } from "../features/meditationSlice";
 
 function Countdown() {
   const { seconds, isTimerOn } = useSelector((store) => store.timer);
@@ -18,7 +18,10 @@ function Countdown() {
 
   useEffect(
     function () {
-      if (isTimerOn && seconds > 0) {
+      if (seconds === 0) {
+        dispatch(timerOff());
+      }
+      if (isTimerOn && seconds >= 1) {
         const timer = setInterval(() => {
           dispatch(countdown());
           dispatch(defineRepetitionState());

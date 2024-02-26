@@ -1,5 +1,4 @@
-import { motion, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 function SvgBreathing() {
@@ -22,14 +21,3 @@ function SvgBreathing() {
 }
 
 export default SvgBreathing;
-
-// {
-//   scale: [1, 2, 2, 1],
-//   border: ["1px solid #00f"],
-// }}
-// transition={{
-//   duration: selectedExercise.step,
-//   ease: "easeInOut",
-//   times: [0, 0.25, 0.5, 0.75],
-//   repeat: selectedExercise.reps,
-// }

@@ -24,12 +24,15 @@ const timerSlice = createSlice({
       state.seconds = +action.payload;
     },
     countdown(state, action) {
-      if (state.seconds < 0) return;
-      state.seconds -= 1;
+      state.seconds = state.seconds - 1;
+    },
+    timerOff(state, action) {
+      state.isTimerOn = false;
     },
   },
 });
 
-export const { reset, playPause, set, countdown } = timerSlice.actions;
+export const { reset, playPause, set, countdown, timerOff } =
+  timerSlice.actions;
 
 export default timerSlice.reducer;
