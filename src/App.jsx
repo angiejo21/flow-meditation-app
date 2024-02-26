@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Audios from "./components/Audios";
 import Music from "./pages/Music";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +19,14 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="settings" element={<Settings />} />
             <Route path="music" element={<Music />} />
-            <Route path="practice" element={<Practice />} />
+            <Route
+              path="practice"
+              element={
+                <ProtectedRoute>
+                  <Practice />
+                </ProtectedRoute>
+              }
+            />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

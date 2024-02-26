@@ -44,12 +44,47 @@ const meditationSlice = createSlice({
         state.selectedExercise.duration.minutes = Math.floor(
           action.payload / 60,
         );
+        state.selectedExercise.reps =
+          +action.payload / state.selectedExercise.step;
       }
+    },
+    defineRepetitionState(state, action) {
+      //passo lo step
+      if (state.selectedExercise.progression.count <= 1)
+        state.selectedExercise.progression.count = state.selectedExercise.step;
+      else
+        state.selectedExercise.progression.count =
+          state.selectedExercise.progression.count - 1;
+      if (
+        state.selectedExercise.progression.count >
+          state.selectedExercise.progression.inhale[0] &&
+        state.selectedExercise.progression.count <=
+          state.selectedExercise.progression.inhale[1]
+      ) {
+        state.selectedExercise.progression.state = "inhale";
+      } else if (
+        state.selectedExercise.progression.count >
+          state.selectedExercise.progression.exhale[0] &&
+        state.selectedExercise.progression.count <=
+          state.selectedExercise.progression.exhale[1]
+      ) {
+        state.selectedExercise.progression.state = "exhale";
+      } else {
+        state.selectedExercise.progression.state = "hold";
+      }
+      console.log(
+        state.selectedExercise.progression.count,
+        state.selectedExercise.progression.state,
+      );
     },
   },
 });
 
-export const { selectPractice, selectExercise, selectDuration } =
-  meditationSlice.actions;
+export const {
+  selectPractice,
+  selectExercise,
+  selectDuration,
+  defineRepetitionState,
+} = meditationSlice.actions;
 
 export default meditationSlice.reducer;

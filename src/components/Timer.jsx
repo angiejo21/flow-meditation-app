@@ -8,7 +8,6 @@ import Countdown from "../components/Countdown";
 
 function Timer() {
   const { isTimerOn } = useSelector((store) => store.timer);
-  const { soundData } = useSelector((store) => store.sound);
   const { seconds } = useSelector(
     (store) => store.meditation.selectedExercise.duration,
   );

@@ -5,30 +5,25 @@ import InputSelect from "./InputSelect";
 import InputNumber from "./InputNumber";
 import InputPractice from "./InputPractice";
 import Info from "./Info";
-
 import ButtonStart from "./ButtonStart";
-import Sounds from "./Sounds";
 
 function Form() {
-  const { selectedPractice, selectedExercise } = useSelector(
-    (store) => store.meditation,
-  );
+  const { selectedPractice } = useSelector((store) => store.meditation);
 
   return (
     <form>
-      {!selectedPractice ? (
-        <InputPractice />
-      ) : (
-        <Button type="link" pageTo="/music" styled="primary">
-          Sounds
-        </Button>
+      <InputPractice />
+
+      {selectedPractice && (
+        <>
+          <InputSelect />
+          <Info />
+          <InputNumber />
+          <Button type="link" pageTo="/music" styled="primary">
+            Sounds
+          </Button>
+        </>
       )}
-
-      {selectedPractice && <InputSelect />}
-
-      {selectedExercise && <Info />}
-
-      {selectedExercise && <InputNumber />}
 
       <Button type="link" pageTo="/" styled="secondary">
         &larr; Back

@@ -28,7 +28,7 @@ function InputNumber() {
       />
 
       {selectedExercise.id.startsWith("B") && (
-        <p>{selectedExercise.duration.seconds / selectedExercise.step} reps</p>
+        <p>{selectedExercise.reps} reps</p>
       )}
 
       {selectedExercise.id.startsWith("M") && (

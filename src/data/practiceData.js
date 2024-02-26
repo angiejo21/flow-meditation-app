@@ -35,10 +35,17 @@ export const practiceData = [
         id: "B00",
         name: "4-4-4",
         duration: {
-          minutes: 12 * DEFAULT_REPETITIONS * 60,
-          seconds: 12 * DEFAULT_REPETITIONS,
+          minutes: 16 * DEFAULT_REPETITIONS * 60,
+          seconds: 16 * DEFAULT_REPETITIONS,
         },
-        step: 12,
+        progression: {
+          count: 16,
+          state: "pause",
+          inhale: [12, 16],
+          exhale: [4, 8],
+        },
+        step: 16,
+        reps: DEFAULT_REPETITIONS,
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, beatae?",
       },
@@ -49,7 +56,13 @@ export const practiceData = [
           minutes: 12 * DEFAULT_REPETITIONS * 60,
           seconds: 12 * DEFAULT_REPETITIONS,
         },
+        progression: {
+          inhale: 4,
+          pause: 0,
+          exhale: 8,
+        },
         step: 12,
+        reps: DEFAULT_REPETITIONS,
         description:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, ducimus.",
       },
@@ -61,6 +74,7 @@ export const practiceData = [
           seconds: 12 * DEFAULT_REPETITIONS,
         },
         step: 12,
+        reps: DEFAULT_REPETITIONS,
         description:
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus.",
       },
@@ -71,7 +85,13 @@ export const practiceData = [
           minutes: Math.floor(190 / 60),
           seconds: 19 * DEFAULT_REPETITIONS,
         },
+        progression: {
+          inhale: 4,
+          pause: 7,
+          exhale: 8,
+        },
         step: 19,
+        reps: DEFAULT_REPETITIONS,
         description:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, dignissimos.",
       },
