@@ -5,7 +5,6 @@ import { playPause, reset } from "../features/timerSlice";
 
 import Button from "../components/Button";
 import Countdown from "../components/Countdown";
-import Audio from "./Audio";
 
 function Timer() {
   const { isTimerOn } = useSelector((store) => store.timer);
@@ -29,14 +28,6 @@ function Timer() {
           &larr; Back
         </Button>
       )}
-      {soundData.map((sound) => (
-        <Audio
-          src={sound.src}
-          volume={sound.volume}
-          isPlaying={sound.isPlaying}
-          key={sound.name}
-        />
-      ))}
     </>
   );
 }

@@ -16,7 +16,13 @@ function Form() {
 
   return (
     <form>
-      {!selectedPractice ? <InputPractice /> : <Sounds />}
+      {!selectedPractice ? (
+        <InputPractice />
+      ) : (
+        <Button type="link" pageTo="/music" styled="primary">
+          Sounds
+        </Button>
+      )}
 
       {selectedPractice && <InputSelect />}
 
