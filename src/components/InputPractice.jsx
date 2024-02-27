@@ -9,10 +9,10 @@ function InputPractice() {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       {data.map((practice) => (
         <Button
-          styled="primary"
+          styled="secondary"
           key={practice.name}
           onClick={() => dispatch(selectPractice(practice))}
         >

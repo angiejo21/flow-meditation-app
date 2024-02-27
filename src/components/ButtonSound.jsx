@@ -17,22 +17,25 @@ function ButtonSound({ sound }) {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-14 mx-4 items-center justify-start">
       <Button styled="control" onClick={() => handleSound(sound.name)}>
         {icon}
       </Button>
-      {sound.isPlaying ? (
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={sound.volume}
-          onChange={(e) => handleVolume(e.target.value, sound.name)}
-        />
-      ) : (
-        <p>{sound.name}</p>
-      )}
+      <div>
+        {sound.isPlaying ? (
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={sound.volume}
+            onChange={(e) => handleVolume(e.target.value, sound.name)}
+            className="w-full accent-teal-600"
+          />
+        ) : (
+          <p className="font-heading text-center">{sound.name}</p>
+        )}
+      </div>
     </div>
   );
 }

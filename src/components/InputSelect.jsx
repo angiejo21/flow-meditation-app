@@ -10,11 +10,12 @@ function InputSelect() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <label>Select an exercise</label>
+    <div className="flex flex-col gap-2 text-xl">
+      <label className="text-slate-600 font-heading">Select an exercise</label>
       <select
         onChange={(e) => dispatch(selectExercise(e.target.value))}
         value={selectedExercise.id}
+        className="p-2 rounded-full outline-none focus:ring focus:ring-teal-500"
       >
         {list.map((option) => (
           <option key={option.id} value={option.id}>

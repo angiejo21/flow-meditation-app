@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { PiMusicNotesFill } from "react-icons/pi";
 
 import Button from "./Button";
 import InputSelect from "./InputSelect";
@@ -11,7 +12,7 @@ function Form() {
   const { selectedPractice } = useSelector((store) => store.meditation);
 
   return (
-    <form>
+    <form className="flex flex-col gap-2">
       <InputPractice />
 
       {selectedPractice && (
@@ -19,16 +20,14 @@ function Form() {
           <InputSelect />
           <Info />
           <InputNumber />
-          <Button type="link" pageTo="/music" styled="primary">
-            Sounds
-          </Button>
+          <div className="flex">
+            <Button type="link" pageTo="/music" styled="secondary">
+              <PiMusicNotesFill /> Sound
+            </Button>
+            <ButtonStart />
+          </div>
         </>
       )}
-
-      <Button type="link" pageTo="/" styled="secondary">
-        &larr; Back
-      </Button>
-      {selectedPractice && <ButtonStart />}
     </form>
   );
 }

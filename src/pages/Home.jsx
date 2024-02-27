@@ -1,16 +1,16 @@
 import Button from "../components/Button";
 import IntroText from "../components/IntroText";
-import Logo from "../components/Logo";
+import Image from "../components/Image";
 
 function Home() {
   return (
-    <div>
-      <Logo />
+    <>
+      <Image />
       <IntroText />
       <Button type="link" pageTo="/settings" styled="primary">
         Begin your journey
       </Button>
-    </div>
+    </>
   );
 }
 

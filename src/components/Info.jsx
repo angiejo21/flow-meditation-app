@@ -4,7 +4,7 @@ function Info() {
   const { selectedExercise } = useSelector((state) => state.meditation);
 
   return (
-    <div>
+    <div className="text-lg text-slate-600 py-2">
       <p>{selectedExercise.description}</p>
     </div>
   );
