@@ -1,6 +1,6 @@
 function IntroText() {
   return (
-    <h1 className="my-10 text-xl">
+    <h1 className="my-10 text-xl text-center">
       Welcome to <span className="font-heading text-teal-600">Flow</span>{" "}
       meditation app
     </h1>

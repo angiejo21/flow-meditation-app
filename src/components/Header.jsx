@@ -1,11 +1,15 @@
+import ButtonMusic from "./ButtonMusic";
 import ButtonTheme from "./ButtonTheme";
 import Logo from "./Logo";
 
 function Header() {
   return (
-    <header className="fixed w-full top-0 left-0 flex items-center justify-between bg-slate-50">
+    <header className=" w-full flex items-center justify-between p-2">
       <Logo />
-      <ButtonTheme />
+      <div>
+        <ButtonMusic />
+        <ButtonTheme />
+      </div>
     </header>
   );
 }

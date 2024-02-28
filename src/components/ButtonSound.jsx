@@ -17,8 +17,11 @@ function ButtonSound({ sound }) {
   }
 
   return (
-    <div className="flex flex-col w-14 mx-4 items-center justify-start">
-      <Button styled="control" onClick={() => handleSound(sound.name)}>
+    <div className="flex flex-col w-20 items-center justify-start md:w-24 lg:w-32">
+      <Button
+        styled={sound.isPlaying ? "soundOn" : "sound"}
+        onClick={() => handleSound(sound.name)}
+      >
         {icon}
       </Button>
       <div>
@@ -33,7 +36,9 @@ function ButtonSound({ sound }) {
             className="w-full accent-teal-600"
           />
         ) : (
-          <p className="font-heading text-center">{sound.name}</p>
+          <p className="font-heading text-center text-xs md:text-lg text-teal-800">
+            {sound.name}
+          </p>
         )}
       </div>
     </div>

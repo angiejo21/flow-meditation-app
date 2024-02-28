@@ -16,24 +16,26 @@ function InputNumber() {
   const meditationShortcuts = [5, 10, 15];
 
   return (
-    <div className="flex flex-wrap gap-2 items-center text-xl">
+    <div className="flex flex-wrap gap-2 items-center">
+      <div>
       <label className="text-slate-600 font-heading pr-2">
         {selectedExercise.id.startsWith("M") ? "Minutes" : "Seconds"}
       </label>
       <input
-        className="w-24 py-2 px-4 rounded-full  outline-none focus:ring focus:ring-teal-500"
+        className="w-24 py-2 px-4 bg-slate-50 rounded-full outline-none focus:ring focus:ring-teal-500 md:w-36"
         type="number"
         value={duration}
         step={step}
         onChange={(e) => dispatch(selectDuration(e.target.value))}
-      />
+        />
       {selectedExercise.id.startsWith("B") && (
         <p className="text-slate-600 font-heading pl-2">
           {selectedExercise.reps} reps
         </p>
       )}
+      </div>
 
-      <div className="flex">
+      <div className="flex flex-1 justify-center ">
         {selectedExercise.id.startsWith("M") && (
           <>
             {meditationShortcuts.map((option) => (
