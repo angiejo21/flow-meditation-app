@@ -15,9 +15,10 @@ function InputPractice() {
           styled="secondary"
           key={practice.name}
           onClick={() => dispatch(selectPractice(practice))}
-        >
+          >
           {practice.name}
         </Button>
+        
       ))}
     </div>
   );

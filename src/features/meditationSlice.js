@@ -15,7 +15,6 @@ const meditationSlice = createSlice({
     selectPractice(state, action) {
       state.selectedPractice = action.payload;
       state.selectedExercise = state.selectedPractice.list[0];
-      console.log(state.selectedExercise, state.selectedPractice);
     },
     selectExercise(state, action) {
       state.selectedExercise = state.selectedPractice.list.filter(
@@ -79,13 +78,11 @@ const meditationSlice = createSlice({
         //altrimenti mette in pausa
         state.selectedExercise.progression.state = "hold";
       }
-      // console.log(
-      //   state.selectedExercise.progression.count,
-      //   state.selectedExercise.progression.state,
-      // );
+
     },
     resetRepetition(state, action) {
       state.selectedExercise.progression.count = state.selectedExercise.step;
+      state.selectedExercise.progression.state = 'pause';
     },
   },
 });

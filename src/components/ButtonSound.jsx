@@ -33,10 +33,10 @@ function ButtonSound({ sound }) {
             step="0.01"
             value={sound.volume}
             onChange={(e) => handleVolume(e.target.value, sound.name)}
-            className="w-full accent-teal-600"
+            className="w-full accent-teal-600 dark:accent-teal-500"
           />
         ) : (
-          <p className="font-heading text-center text-xs md:text-lg text-teal-800">
+          <p className="font-heading text-center text-xs md:text-lg text-teal-800 dark:text-teal-100">
             {sound.name}
           </p>
         )}

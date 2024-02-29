@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="w-full text-center p-2">
-      &copy; {new Date().getFullYear()} Angela Bellò
+    <footer className="w-full text-center p-2 dark:text-teal-100">
+      &copy; {new Date().getFullYear()} <a href="http://bello.codes" target="blank" className="text-teal-600">Angela Bellò</a>
     </footer>
   );
 }

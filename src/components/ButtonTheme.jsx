@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../features/darkModeSlice";
 
 function ButtonTheme() {
-  const { isDarkModeOn } = useSelector((store) => store.darkMode);
+  const { isThemeDark } = useSelector((store) => store.darkMode);
   const dispatch = useDispatch();
 
   return (
     <Button styled="header" onClick={() => dispatch(toggleDarkMode())}>
-      {isDarkModeOn ? <PiMoon /> : <PiSun />}
+      {isThemeDark ? <PiSun /> : <PiMoon />}
     </Button>
   );
 }

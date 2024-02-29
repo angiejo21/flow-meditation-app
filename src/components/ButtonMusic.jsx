@@ -1,15 +1,14 @@
+import { TbMusicOff } from "react-icons/tb";
 import Button from "./Button";
-import { PiMusicNotesFill } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode } from "../features/darkModeSlice";
+import { switchOffMusic } from "../features/soundSlice";
 
 function ButtonMusic() {
-  const { isDarkModeOn } = useSelector((store) => store.darkMode);
   const dispatch = useDispatch();
 
   return (
-    <Button styled="header" onClick={() => dispatch(toggleDarkMode())}>
-      <PiMusicNotesFill />
+    <Button styled="header" onClick={() => dispatch(switchOffMusic())}>
+      <TbMusicOff />
     </Button>
   );
 }

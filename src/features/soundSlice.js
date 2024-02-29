@@ -25,9 +25,15 @@ const soundSlice = createSlice({
         (el) => el.isPlaying === true,
       );
     },
+    switchOffMusic(state,action){
+      state.soundData.forEach(el=>{
+        if(el.isPlaying){
+          el.isPlaying = false
+        }  return;})
+    }
   },
 });
 
-export const { togglePlay, changeVolume, selectSounds } = soundSlice.actions;
+export const { togglePlay, changeVolume,switchOffMusic, selectSounds } = soundSlice.actions;
 
 export default soundSlice.reducer;

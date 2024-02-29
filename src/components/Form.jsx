@@ -13,7 +13,6 @@ function Form() {
   return (
     <form className="flex flex-col gap-3 px-3 md:w-2/3 md:text-xl lg:w-1/2">
       <InputPractice />
-
       {selectedPractice && (
         <>
           <InputSelect />

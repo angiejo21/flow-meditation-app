@@ -9,14 +9,14 @@ import Countdown from "../components/Countdown";
 
 function Timer() {
   const { isTimerOn } = useSelector((store) => store.timer);
-  const { seconds } = useSelector(
-    (store) => store.meditation.selectedExercise.duration,
+  const { id, duration:{seconds} } = useSelector(
+    (store) => store.meditation.selectedExercise,
   );
   const dispatch = useDispatch();
 
   function resetTimer() {
     dispatch(reset(seconds));
-    dispatch(resetRepetition());
+    if(id.startsWith('B')) dispatch(resetRepetition());
   }
 
   return (
