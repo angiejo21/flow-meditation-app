@@ -16,20 +16,33 @@ function InputNumber() {
   const meditationShortcuts = [5, 10, 15];
 
   return (
-    <div className="flex flex-wrap gap-2 items-center">
+    <div className="flex flex-wrap items-center gap-2">
       <div className="flex items-center">
-        <label className="pr-4 font-heading text-slate-600 dark:text-slate-300">
+        <label className="pr-2 font-heading text-slate-600 dark:text-slate-300">
           {selectedExercise.id.startsWith("M") ? "Minutes" : "Seconds"}
         </label>
-        <input
-          className="w-24 py-2 px-4 bg-slate-50 rounded-full outline-none focus:ring focus:ring-teal-500 md:w-36 dark:bg-slate-950 dark:text-teal-100"
-          type="number"
-          value={duration}
-          step={step}
-          onChange={(e) => dispatch(selectDuration(e.target.value))}
+        <div className="relative">
+          <input
+            className="w-44 rounded-full bg-slate-50 px-4 py-2 text-center outline-none focus:ring focus:ring-teal-500 dark:bg-slate-950 dark:text-teal-100 lg:w-full "
+            type="number"
+            placeholder={duration}
+            disabled
           />
+          <Button
+            styled="inputNumberMinus"
+            onClick={() => dispatch(selectDuration(duration - step))}
+          >
+            -
+          </Button>
+          <Button
+            styled="inputNumberPlus"
+            onClick={() => dispatch(selectDuration(duration + step))}
+          >
+            +
+          </Button>
+        </div>
         {selectedExercise.id.startsWith("B") && (
-          <p className="pl-4 text-slate-600 font-heading dark:text-slate-300">
+          <p className="pl-2 font-heading text-slate-600 dark:text-slate-300">
             {selectedExercise.reps} reps
           </p>
         )}
@@ -40,11 +53,11 @@ function InputNumber() {
           <>
             {meditationShortcuts.map((option) => (
               <Button
-                styled="secondary"
-                onClick={() => dispatch(selectDuration(option))}
+                styled="inputNumber"
+                onClick={() => dispatch(selectDuration(duration + option))}
                 key={option}
               >
-                {option} min
+                + {option}
               </Button>
             ))}
           </>

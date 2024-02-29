@@ -11,7 +11,7 @@ function Form() {
   const { selectedPractice } = useSelector((store) => store.meditation);
 
   return (
-    <form className="flex flex-col gap-3 px-3 md:w-2/3 md:text-xl lg:w-1/2">
+    <form className="flex flex-col gap-3 px-3 md:w-3/4 md:text-xl lg:w-2/3 2xl:w-1/2 ">
       <InputPractice />
       {selectedPractice && (
         <>

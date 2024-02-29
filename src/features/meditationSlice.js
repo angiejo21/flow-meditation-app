@@ -22,8 +22,14 @@ const meditationSlice = createSlice({
       )[0];
     },
     selectDuration(state, action) {
+      const isMeditation = state.selectedExercise.id.startsWith("M");
+
+      //Early returns
+      if (isMeditation && action.payload < 1) return;
+      if (!isMeditation && action.payload < state.selectedExercise.step) return;
+      //if it's a guided meditation it cannot last less than the audio
       if (
-        state.selectedPractice.name === "meditation" &&
+        isMeditation &&
         state.selectedExercise.id.slice(1) !== "00" &&
         action.payload <
           state.selectedPractice.list.filter(
@@ -31,18 +37,14 @@ const meditationSlice = createSlice({
           )[0].duration.minutes
       )
         return;
-      if (
-        state.selectedPractice.name === "breathing" &&
-        action.payload < state.selectedExercise.step
-      )
-        return;
-      if (state.selectedPractice.name === "meditation") {
+
+      if (isMeditation) {
         state.selectedExercise.duration.minutes = +action.payload;
         state.selectedExercise.duration.seconds = +action.payload * 60;
       } else {
-        state.selectedExercise.duration.seconds = action.payload;
+        state.selectedExercise.duration.seconds = +action.payload;
         state.selectedExercise.duration.minutes = Math.floor(
-          action.payload / 60,
+          +action.payload / 60,
         );
         state.selectedExercise.reps =
           +action.payload / state.selectedExercise.step;
@@ -78,11 +80,10 @@ const meditationSlice = createSlice({
         //altrimenti mette in pausa
         state.selectedExercise.progression.state = "hold";
       }
-
     },
     resetRepetition(state, action) {
       state.selectedExercise.progression.count = state.selectedExercise.step;
-      state.selectedExercise.progression.state = 'pause';
+      state.selectedExercise.progression.state = "pause";
     },
   },
 });
