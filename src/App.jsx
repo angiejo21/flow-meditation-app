@@ -13,25 +13,25 @@ function App() {
   const { isThemeDark } = useSelector((store) => store.darkMode);
 
   return (
-    <div className={isThemeDark ? 'dark' : '' }>
-      <div className='h-screen flex flex-col justify-between items-center bg-gradient-to-b from-slate-100 to-teal-100 dark:from-teal-950 dark:to-slate-950'>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" index element={<Home />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="music" element={<Music />} />
-              <Route
-                path="practice"
-                element={
-                  <ProtectedRoute>
-                    <Practice />
-                  </ProtectedRoute>
-                }
-                />
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </BrowserRouter>
-          <Audios />
+    <div className={isThemeDark ? "dark" : ""}>
+      <div className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-b from-slate-100 to-teal-100 dark:from-teal-950 dark:to-slate-950">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" index element={<Home />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="music" element={<Music />} />
+            <Route
+              path="practice"
+              element={
+                <ProtectedRoute>
+                  <Practice />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+        <Audios />
       </div>
     </div>
   );

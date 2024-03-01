@@ -23,7 +23,7 @@ function InputNumber() {
         </label>
         <div className="relative">
           <input
-            className="w-44 rounded-full bg-slate-50 px-4 py-2 text-center outline-none focus:ring focus:ring-teal-500 dark:bg-slate-950 dark:text-teal-100 lg:w-full "
+            className="w-full rounded-full bg-slate-50 px-4 py-2 text-center outline-none focus:ring focus:ring-teal-500 dark:bg-slate-950 dark:text-teal-100 md:w-44 lg:w-full "
             type="number"
             placeholder={duration}
             disabled
@@ -48,7 +48,7 @@ function InputNumber() {
         )}
       </div>
 
-      <div className="flex flex-1 justify-center ">
+      <div className="flex w-full justify-center sm:w-auto sm:flex-1 ">
         {selectedExercise.id.startsWith("M") && (
           <>
             {meditationShortcuts.map((option) => (

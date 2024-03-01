@@ -85,6 +85,17 @@ const meditationSlice = createSlice({
       state.selectedExercise.progression.count = state.selectedExercise.step;
       state.selectedExercise.progression.state = "pause";
     },
+    playPauseMeditation(state, action) {
+      if (state.selectedExercise.id.startsWith("B")) return;
+      if (state.selectedExercise.id === "M00") return;
+      state.selectedExercise.isReset = false;
+      state.selectedExercise.isPlaying = !state.selectedExercise.isPlaying;
+    },
+    resetMeditation(state, action) {
+      if (state.selectedExercise.id === "M00") return;
+      state.selectedExercise.isReset = true;
+      state.selectedExercise.isPlaying = false;
+    },
   },
 });
 
@@ -94,6 +105,8 @@ export const {
   selectDuration,
   defineRepetitionState,
   resetRepetition,
+  playPauseMeditation,
+  resetMeditation,
 } = meditationSlice.actions;
 
 export default meditationSlice.reducer;
