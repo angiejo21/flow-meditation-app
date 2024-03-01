@@ -9,16 +9,15 @@ function InputPractice() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex items-center justify-center">
       {data.map((practice) => (
         <Button
           styled="secondary"
           key={practice.name}
           onClick={() => dispatch(selectPractice(practice))}
-          >
+        >
           {practice.name}
         </Button>
-        
       ))}
     </div>
   );

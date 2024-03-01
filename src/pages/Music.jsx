@@ -7,7 +7,7 @@ function Music() {
   return (
     <>
       <Header />
-      <main className="flex flex-col justify-center items-center px-5">
+      <main className="flex flex-col items-center justify-center px-5">
         <Sounds />
         <Button type="link" pageTo="/settings" styled="secondary">
           &larr; Back

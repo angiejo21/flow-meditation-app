@@ -1,7 +1,9 @@
-import Button from "./Button";
+import { useDispatch, useSelector } from "react-redux";
 import { PiMoon } from "react-icons/pi";
 import { PiSun } from "react-icons/pi";
-import { useDispatch, useSelector } from "react-redux";
+
+import Button from "./Button";
+
 import { toggleDarkMode } from "../features/darkModeSlice";
 
 function ButtonTheme() {

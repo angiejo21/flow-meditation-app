@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 
 function SvgMeditation() {
   const { minutes, seconds } = useSelector((store) => store.timer);
-  const {isThemeDark} = useSelector((store)=>store.darkMode)
+  const { isThemeDark } = useSelector((store) => store.darkMode);
 
   function colorPercentage() {
     const circleProgression = circlePercentage(seconds);
-    if(isThemeDark){
+    if (isThemeDark) {
       if (circleProgression > 80) return "stroke-teal-100";
       if (circleProgression > 70) return "stroke-teal-200";
       if (circleProgression > 60) return "stroke-teal-300";
@@ -16,7 +16,7 @@ function SvgMeditation() {
       if (circleProgression > 20) return "stroke-teal-700";
       if (circleProgression > 10) return "stroke-teal-800";
       if (circleProgression > 0) return "stroke-teal-900";
-    }else{
+    } else {
       if (circleProgression > 80) return "stroke-teal-900";
       if (circleProgression > 70) return "stroke-teal-800";
       if (circleProgression > 60) return "stroke-teal-700";
@@ -35,7 +35,7 @@ function SvgMeditation() {
 
   return (
     <svg
-      className="absolute top-0 left-0 w-full h-full transition-all"
+      className="absolute left-0 top-0 h-full w-full transition-all"
       viewBox="0 0 100 100"
     >
       <circle

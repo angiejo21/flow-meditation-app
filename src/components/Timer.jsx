@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FaStop, FaPlay, FaPause } from "react-icons/fa";
 
+import Button from "../components/Button";
+import Countdown from "../components/Countdown";
+
 import { playPauseTimer, reset } from "../features/timerSlice";
 import {
   playPauseMeditation,
   resetMeditation,
   resetRepetition,
 } from "../features/meditationSlice";
-
-import Button from "../components/Button";
-import Countdown from "../components/Countdown";
 
 function Timer() {
   const { isTimerOn } = useSelector((store) => store.timer);

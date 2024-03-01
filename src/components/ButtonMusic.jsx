@@ -1,6 +1,6 @@
 import { PiSpeakerSimpleSlash } from "react-icons/pi";
 import Button from "./Button";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { switchOffMusic } from "../features/soundSlice";
 
 function ButtonMusic() {

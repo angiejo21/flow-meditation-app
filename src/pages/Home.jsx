@@ -10,8 +10,8 @@ function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col justify-center items-center px-5">
-        <Image image={meditateSvg}/>
+      <main className="flex flex-col items-center justify-center px-5">
+        <Image image={meditateSvg} />
         <IntroText />
         <Button type="link" pageTo="/settings" styled="primary">
           Begin your journey

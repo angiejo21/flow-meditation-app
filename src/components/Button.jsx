@@ -4,24 +4,24 @@ import { Link } from "react-router-dom";
 function Button({ styled, type, pageTo, onClick, children }) {
   const styles = {
     primary:
-      "w-full m-1 py-2 px-4 border-2 border-teal-400 bg-teal-400 text-teal-950 uppercase text-center font-semibold rounded-full shadow-md hover:shadow-sm hover:border-teal-500 hover:bg-teal-500 transition-all sm:m-2 sm:py-3 sm:px-5 sm:text-xl dark:bg-teal-700 dark:border-teal-700 dark:text-teal-100 dark:hover:bg-teal-600 dark:hover:border-teal-600",
+      "m-1 w-full rounded-full border-2 border-teal-400 bg-teal-400 px-4 py-2 text-center font-semibold uppercase text-teal-950 shadow-md transition-all hover:border-teal-500 hover:bg-teal-500 hover:shadow-sm dark:border-teal-700 dark:bg-teal-700 dark:text-teal-100 dark:hover:border-teal-600 dark:hover:bg-teal-600 sm:m-2 sm:px-5 sm:py-3 sm:text-xl",
     secondary:
-      "m-1 py-2 px-4 border-2 border-teal-500 bg-slate-50 text-teal-800 uppercase font-semibold rounded-full shadow-md hover:shadow-sm hover:border-teal-300 hover:bg-teal-300 transition-all sm:m-2 sm:py-3 sm:text-xl sm:px-5 dark:bg-slate-900 dark:text-teal-100 dark:hover:bg-teal-800 dark:hover:border-teal-800",
-    play: "mx-2 my-5 p-5 border-2 border-teal-400 bg-teal-400 text-xl text-teal-950 rounded-full shadow-md transition-all hover:shadow-sm hover:bg-teal-500 hover:border-teal-500 dark:bg-teal-700 dark:border-teal-700 dark:text-teal-100 dark:hover:bg-teal-600 dark:hover:border-teal-600",
+      "m-1 rounded-full border-2 border-teal-500 bg-slate-50 px-4 py-2 font-semibold uppercase text-teal-800 shadow-md transition-all hover:border-teal-300 hover:bg-teal-300 hover:shadow-sm dark:bg-slate-900 dark:text-teal-100 dark:hover:border-teal-800 dark:hover:bg-teal-800 sm:m-2 sm:px-5 sm:py-3 sm:text-xl",
+    play: "mx-2 my-5 rounded-full border-2 border-teal-400 bg-teal-400 p-5 text-xl text-teal-950 shadow-md transition-all hover:border-teal-500 hover:bg-teal-500 hover:shadow-sm dark:border-teal-700 dark:bg-teal-700 dark:text-teal-100 dark:hover:border-teal-600 dark:hover:bg-teal-600",
     reset:
-      "mx-2 my-5 p-5 border-2 border-lime-500 bg-slate-50 text-xl text-lime-950 rounded-full shadow-md transition-all hover:shadow-sm hover:bg-lime-400 hover:border-lime-400 dark:bg-slate-950 dark:border-lime-800  dark:text-lime-100 dark:hover:bg-lime-800",
+      "mx-2 my-5 rounded-full border-2 border-lime-500 bg-slate-50 p-5 text-xl text-lime-950 shadow-md transition-all hover:border-lime-400 hover:bg-lime-400 hover:shadow-sm dark:border-lime-800 dark:bg-slate-950  dark:text-lime-100 dark:hover:bg-lime-800",
     header:
-      "text-2xl text-slate-950 p-3 m-1 rounded-full hover:shadow-sm hover:bg-teal-300 transition-all dark:text-teal-100 dark:hover:bg-teal-800",
+      "m-1 rounded-full p-3 text-2xl text-slate-950 transition-all hover:bg-teal-300 hover:shadow-sm dark:text-teal-100 dark:hover:bg-teal-800",
     sound:
-      "my-1 p-3 border-2 border-teal-500 bg-slate-50 text-2xl text-teal-800 rounded-full transition-all hover:bg-teal-300 hover:border-teal-300 sm:p-4 sm:my-2 sm:text-4xl md:my-4 dark:bg-slate-900 dark:text-teal-100 dark:hover:bg-teal-800 dark:hover:border-teal-800",
+      "my-1 rounded-full border-2 border-teal-500 bg-slate-50 p-3 text-2xl text-teal-800 transition-all hover:border-teal-300 hover:bg-teal-300 dark:bg-slate-900 dark:text-teal-100 dark:hover:border-teal-800 dark:hover:bg-teal-800 sm:my-2 sm:p-4 sm:text-4xl md:my-4",
     soundOn:
-      "my-1 p-3 border-2 border-teal-300 bg-teal-300 text-2xl text-teal-800 rounded-full transition-all sm:p-4 sm:my-2 sm:text-4xl md:my-4 dark:border-teal-800 dark:bg-teal-800 dark:text-teal-100 dark:hover:bg-teal-950",
+      "my-1 rounded-full border-2 border-teal-300 bg-teal-300 p-3 text-2xl text-teal-800 transition-all dark:border-teal-800 dark:bg-teal-800 dark:text-teal-100 dark:hover:bg-teal-950 sm:my-2 sm:p-4 sm:text-4xl md:my-4",
     inputNumberPlus:
-      "absolute right-1 top-1/2 bg-teal-400 text-2xl w-14 rounded-full text-teal-950 transform -translate-y-1/2 hover:bg-teal-500 dark:bg-teal-700 dark:text-teal-100 dark:hover:bg-teal-600",
+      "absolute right-1 top-1/2 w-14 -translate-y-1/2 transform rounded-full bg-teal-400 text-2xl text-teal-950 hover:bg-teal-500 dark:bg-teal-700 dark:text-teal-100 dark:hover:bg-teal-600",
     inputNumberMinus:
-      "absolute left-1 top-1/2 bg-teal-400 text-2xl w-14 rounded-full text-teal-950 transform -translate-y-1/2 hover:bg-teal-500 dark:bg-teal-700 dark:text-teal-100 dark:hover:bg-teal-600",
+      "absolute left-1 top-1/2 w-14 -translate-y-1/2 transform rounded-full bg-teal-400 text-2xl text-teal-950 hover:bg-teal-500 dark:bg-teal-700 dark:text-teal-100 dark:hover:bg-teal-600",
     inputNumber:
-      "m-1 py-2 w-full border-2 border-teal-500 bg-slate-50 text-teal-800 uppercase font-semibold rounded-full shadow-md hover:shadow-sm hover:border-teal-300 hover:bg-teal-300 transition-all sm:m-2 sm:py-3 sm:text-xl md:py-2 dark:bg-slate-900 dark:text-teal-100 dark:hover:bg-teal-800 dark:hover:border-teal-800",
+      "m-1 w-full rounded-full border-2 border-teal-500 bg-slate-50 py-2 font-semibold uppercase text-teal-800 shadow-md transition-all hover:border-teal-300 hover:bg-teal-300 hover:shadow-sm dark:bg-slate-900 dark:text-teal-100 dark:hover:border-teal-800 dark:hover:bg-teal-800 sm:m-2 sm:py-3 sm:text-xl md:py-2",
   };
 
   function handleClick(e) {

@@ -20,20 +20,17 @@ const soundSlice = createSlice({
         (el) => el.name === action.payload.soundName,
       )[0].volume = action.payload.value;
     },
-    selectSounds(state, action) {
-      state.selectedSounds = state.soundData.filter(
-        (el) => el.isPlaying === true,
-      );
+    switchOffMusic(state, action) {
+      state.soundData.forEach((el) => {
+        if (el.isPlaying) {
+          el.isPlaying = false;
+        }
+        return;
+      });
     },
-    switchOffMusic(state,action){
-      state.soundData.forEach(el=>{
-        if(el.isPlaying){
-          el.isPlaying = false
-        }  return;})
-    }
   },
 });
 
-export const { togglePlay, changeVolume,switchOffMusic, selectSounds } = soundSlice.actions;
+export const { togglePlay, changeVolume, switchOffMusic } = soundSlice.actions;
 
 export default soundSlice.reducer;

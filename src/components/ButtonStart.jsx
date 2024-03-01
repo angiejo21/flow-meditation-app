@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Button from "./Button";
 import { set } from "../features/timerSlice";
-import { selectSounds } from "../features/soundSlice";
 
 function ButtonStart() {
   const { seconds } = useSelector(
@@ -15,7 +14,6 @@ function ButtonStart() {
 
   function handleStart() {
     dispatch(set(seconds));
-    dispatch(selectSounds())
     navigate("/practice");
   }
 
