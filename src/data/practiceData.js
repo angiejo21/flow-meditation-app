@@ -16,7 +16,13 @@ export const practiceData = [
         id: "M00",
         name: "Unguided meditation",
         duration: { minutes: DEFAULT_DURATION, seconds: DEFAULT_DURATION * 60 },
-        description: "",
+        description: `<p className='mb-2'>
+            Set your own meditation pace on our timer, and choose your favourite ambient sounds. Unguided meditation lets you explore your inner self, fostering peace and resilience.
+          </p> 
+          <p>
+            Take a moment for yourself, breathe deeply, and let your mind wander. Your journey to mindfulness begins here.
+          </p>
+          `,
       },
       {
         id: "M01",
