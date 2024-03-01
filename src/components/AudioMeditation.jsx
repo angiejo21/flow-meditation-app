@@ -5,7 +5,8 @@ import Audio from "./Audio";
 function AudioMeditation() {
   const { selectedExercise } = useSelector((store) => store.meditation);
 
-  if (selectedExercise.id.startsWith("B")) return null;
+  if (selectedExercise.id.startsWith("B") || selectedExercise.id === "M00")
+    return null;
 
   return (
     <>
