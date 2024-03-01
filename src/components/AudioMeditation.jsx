@@ -15,6 +15,7 @@ function AudioMeditation() {
         volume={selectedExercise.volume}
         isPlaying={selectedExercise.isPlaying}
         isReset={selectedExercise.isReset}
+        loop={false}
         key={selectedExercise.name}
       />
     </>

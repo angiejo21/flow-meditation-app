@@ -11,6 +11,7 @@ function Audios() {
           src={sound.src}
           volume={sound.volume}
           isPlaying={sound.isPlaying}
+          loop={true}
           key={sound.name}
         />
       ))}

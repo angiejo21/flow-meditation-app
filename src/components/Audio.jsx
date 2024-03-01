@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function Audio({ isPlaying, volume, src, isReset }) {
+function Audio({ isPlaying, volume, src, isReset, loop }) {
   const audioRef = useRef(null);
 
   useEffect(
@@ -19,7 +19,7 @@ function Audio({ isPlaying, volume, src, isReset }) {
     [isPlaying, volume, isReset],
   );
 
-  return <audio ref={audioRef} src={src} loop />;
+  return <audio ref={audioRef} src={src} loop={loop} />;
 }
 
 export default Audio;
