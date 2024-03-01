@@ -12,7 +12,7 @@ function SvgBreathing() {
   const variantsDark = {
     inhale: "bg-teal-600",
     exhale: "bg-teal-800",
-    hold: "bg-teal-800",
+    hold: "bg-lime-800",
   };
 
   const variant = isThemeDark
