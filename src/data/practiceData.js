@@ -58,10 +58,10 @@ export const practiceData = [
         id: "M04",
         name: "The center of now - Tara Brach",
         duration: { minutes: 16, seconds: 15 * 60 + 38 },
-        src: "https://content.libsyn.com/p/1/0/a/10a6f5bc20f46e1d/2024-02-14-Meditation-Resting-Center-of-Now-2022-10-05--2017-04-26-TaraBrach.mp3?c_id=167778253&cs_id=167778253&response-content-type=audio%2Fmpeg&Expires=1709283550&Signature=Ymp7B4ORWYwyfQjS4UywBFvmeqF3gCKtlOW1tzZ2M4Ed96pzf3S2qs7cprj3~f95kmBzKpJzyGMvTx3gliUlIVZwnK~O3UAIfkKnT9xCRvUrMWfdlYlmT2MnNfMTwAr7-nzqZXolcIhel06xcKJYDQJVz9DXu33QdbfIQv9QNgF6t9wY~OslilZir3kZhURdAk~edDA31K3J4~BNCvKYOl2DfemDAtJikuqYcU4CKdsyLzg7J2doRheW9NVeHfFuFI83WQ63T4g-GNFAtKg6zR3IvNym034bfcvrwGvMJmEwRsMDj511IPNksyZb59~SiUyBL9rOCFIO~EwrvKux4Q__&Key-Pair-Id=K1YS7LZGUP96OI",
+        src: "https://traffic.libsyn.com/secure/tarabrach/2024-02-14-Meditation-Resting-Center-of-Now-2022-10-05--2017-04-26-TaraBrach.mp3",
         description: `
           <h6>
-            <a href='https://www.tarabrach.com/meditation-the-center-of-now-3/' className='text-teal-600 active:text-teal-700 hover:text-teal-700 dark:text-teal-600 dark:active:text-teal-500 dark:hover:text-teal-500 hover:underline'>The center of now</a>
+            <a href='https://www.tarabrach.com/meditation-the-center-of-now-3/' className='text-teal-600 active:text-teal-700 hover:text-teal-700 dark:text-teal-600 dark:active:text-teal-500 dark:hover:text-teal-500 hover:underline' target='blank'>The center of now</a>
           </h6>
           <p className='mb-2'>
             This meditation awakens our senses, then guides us to rest in the changing flow of experience. When the mind drifts, we are invited to relax back into full living presence, into that Beingness that is the center of now.  'Listening to and feeling, the changing flow - right here, right in the center of now.
@@ -87,10 +87,10 @@ export const practiceData = [
         id: "M06",
         name: "Listening to our heart - Tara Brach",
         duration: { minutes: 21, seconds: 20 * 60 + 9 },
-        src: "https://content.libsyn.com/p/a/8/0/a80f28d3b727108a/2024-01-24-Meditation-Listening-to-Our-Heart-2020-10-14-TaraBrach.mp3?c_id=166790233&cs_id=166790233&response-content-type=audio%2Fmpeg&Expires=1709284337&Signature=XCy6vUAF2Tlx96ihGdUANkzERK6CSN1L6HBe2x3o-xZAze8gYtbc2Kg0NIa7tXETwcSq6ApnpkMz6y-K94q3rnJKPPMHPctldEbqr~CDD22v3N45lxK~I0LsTd-pR4fy2i4~cL9ijNgHu9AY6EDlIN6dloqfIjdYDTnyBMgEQTluZYD0bWW0EDwu78eBhLlZ5bzdkpriXjUeQXSIjSul6Av1lgaCvNI7zyVSTt5N62wGBdcD2mfUC~erwTq1Jl2PvvtJPJKlqdC06d8YRflNvmxoikaegOLYmtH738bSrnfGrHnvmFC8jRaUQqvWVregRXbm9J0QAi6GaqiXKmbmnQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+        src: "https://traffic.libsyn.com/secure/tarabrach/2024-01-24-Meditation-Listening-to-Our-Heart-2020-10-14-TaraBrach.mp3",
         description: `
         <h6>
-          <a href='https://www.tarabrach.com/meditation-listening-heart-2/' className='text-teal-600 active:text-teal-700 hover:text-teal-700 dark:text-teal-600 dark:active:text-teal-500 dark:hover:text-teal-500 hover:underline'>Listening to our heart</a>
+          <a href='https://www.tarabrach.com/meditation-listening-heart-2/' className='text-teal-600 active:text-teal-700 hover:text-teal-700 dark:text-teal-600 dark:active:text-teal-500 dark:hover:text-teal-500 hover:underline' target='blank'>Listening to our heart</a>
         </h6>
         <p className='mb-2'>
           True listening arouses an open receptive presence that can be truly healing. This meditation awakens a listening presence; first bringing that receptive awareness to sensations and sounds, and then offering that presence to the tenderness and vulnerability of our heart.
