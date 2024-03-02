@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Home from "./pages/Home";
 import Practice from "./pages/Practice";
 import Settings from "./pages/Settings";
 import PageNotFound from "./pages/PageNotFound";
-
-import Audios from "./components/Audios";
 import Music from "./pages/Music";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import { useSelector } from "react-redux";
+
+import Audios from "./components/Audios";
 
 function App() {
   const { isThemeDark } = useSelector((store) => store.darkMode);

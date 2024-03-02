@@ -11,7 +11,10 @@ function Home() {
     <>
       <Header />
       <main className="flex flex-col items-center justify-center px-5">
-        <Image image={meditateSvg} />
+        <Image
+          image={meditateSvg}
+          alt="Person sitting on the floor meditating"
+        />
         <IntroText />
         <Button type="link" pageTo="/settings" styled="primary">
           Begin your journey

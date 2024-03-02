@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import ButtonMusic from "./ButtonMusic";
+import ButtonSoundOff from "./ButtonSoundOff";
 import ButtonTheme from "./ButtonTheme";
 import Logo from "./Logo";
 
@@ -11,7 +11,7 @@ function Header() {
     <header className=" flex w-full items-center justify-between p-2">
       <Logo />
       <div>
-        {isMusicPlaying && <ButtonMusic />}
+        {isMusicPlaying && <ButtonSoundOff />}
         <ButtonTheme />
       </div>
     </header>

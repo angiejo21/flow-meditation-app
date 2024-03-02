@@ -11,7 +11,7 @@ const timerSlice = createSlice({
   name: "timer",
   initialState,
   reducers: {
-    reset(state, action) {
+    resetTimer(state, action) {
       state.minutes = +action.payload / 60;
       state.seconds = +action.payload;
       state.isTimerOn = false;
@@ -19,11 +19,11 @@ const timerSlice = createSlice({
     playPauseTimer(state, action) {
       state.isTimerOn = !state.isTimerOn;
     },
-    set(state, action) {
+    setTimer(state, action) {
       state.minutes = +action.payload / 60;
       state.seconds = +action.payload;
     },
-    countdown(state, action) {
+    countdownTimer(state, action) {
       state.seconds = state.seconds - 1;
     },
     timerOff(state, action) {
@@ -32,7 +32,12 @@ const timerSlice = createSlice({
   },
 });
 
-export const { reset, playPauseTimer, set, countdown, timerOff } =
-  timerSlice.actions;
+export const {
+  resetTimer,
+  playPauseTimer,
+  setTimer,
+  countdownTimer,
+  timerOff,
+} = timerSlice.actions;
 
 export default timerSlice.reducer;

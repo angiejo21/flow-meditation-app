@@ -26,7 +26,7 @@ export const practiceData = [
       },
       {
         id: "M01",
-        name: "Short body scan - Diana Winston (3 min)",
+        name: "Short body scan - Diana Winston",
         duration: { minutes: 3, seconds: 2 * 60 + 45 },
         src: "https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/Body-Scan-Meditation.mp3",
         description: UCLAhealth,
@@ -36,7 +36,7 @@ export const practiceData = [
       },
       {
         id: "M02",
-        name: "Meditation for working with difficulties - Diana Winston (7 min)",
+        name: "Meditation for working with difficulties - Diana Winston",
         duration: { minutes: 7, seconds: 6 * 60 + 56 },
         src: "https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/04_Meditation_for_Working_with_Difficulties.mp3",
         description: UCLAhealth,
@@ -46,7 +46,7 @@ export const practiceData = [
       },
       {
         id: "M03",
-        name: "Breath, sound and body meditation - Diana Winston (12 min)",
+        name: "Breath, sound and body meditation - Diana Winston",
         duration: { minutes: 12, seconds: 12 * 60 },
         src: "https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/02_Breath_Sound_Body_Meditation.mp3",
         description: UCLAhealth,
@@ -56,7 +56,7 @@ export const practiceData = [
       },
       {
         id: "M04",
-        name: "The center of now - Tara Brach (16 min)",
+        name: "The center of now - Tara Brach",
         duration: { minutes: 16, seconds: 15 * 60 + 38 },
         src: "https://content.libsyn.com/p/1/0/a/10a6f5bc20f46e1d/2024-02-14-Meditation-Resting-Center-of-Now-2022-10-05--2017-04-26-TaraBrach.mp3?c_id=167778253&cs_id=167778253&response-content-type=audio%2Fmpeg&Expires=1709283550&Signature=Ymp7B4ORWYwyfQjS4UywBFvmeqF3gCKtlOW1tzZ2M4Ed96pzf3S2qs7cprj3~f95kmBzKpJzyGMvTx3gliUlIVZwnK~O3UAIfkKnT9xCRvUrMWfdlYlmT2MnNfMTwAr7-nzqZXolcIhel06xcKJYDQJVz9DXu33QdbfIQv9QNgF6t9wY~OslilZir3kZhURdAk~edDA31K3J4~BNCvKYOl2DfemDAtJikuqYcU4CKdsyLzg7J2doRheW9NVeHfFuFI83WQ63T4g-GNFAtKg6zR3IvNym034bfcvrwGvMJmEwRsMDj511IPNksyZb59~SiUyBL9rOCFIO~EwrvKux4Q__&Key-Pair-Id=K1YS7LZGUP96OI",
         description: `
@@ -75,7 +75,7 @@ export const practiceData = [
       },
       {
         id: "M05",
-        name: "Complete meditation Instructions - Diana Winston (19 min)",
+        name: "Complete meditation Instructions - Diana Winston",
         duration: { minutes: 19, seconds: 19 * 60 },
         src: "https://d1cy5zxxhbcbkk.cloudfront.net/guided-meditations/03_Complete_Meditation_Instructions.mp3",
         description: UCLAhealth,
@@ -85,7 +85,7 @@ export const practiceData = [
       },
       {
         id: "M06",
-        name: "Listening to our heart - Tara Brach (21 min)",
+        name: "Listening to our heart - Tara Brach",
         duration: { minutes: 21, seconds: 20 * 60 + 9 },
         src: "https://content.libsyn.com/p/a/8/0/a80f28d3b727108a/2024-01-24-Meditation-Listening-to-Our-Heart-2020-10-14-TaraBrach.mp3?c_id=166790233&cs_id=166790233&response-content-type=audio%2Fmpeg&Expires=1709284337&Signature=XCy6vUAF2Tlx96ihGdUANkzERK6CSN1L6HBe2x3o-xZAze8gYtbc2Kg0NIa7tXETwcSq6ApnpkMz6y-K94q3rnJKPPMHPctldEbqr~CDD22v3N45lxK~I0LsTd-pR4fy2i4~cL9ijNgHu9AY6EDlIN6dloqfIjdYDTnyBMgEQTluZYD0bWW0EDwu78eBhLlZ5bzdkpriXjUeQXSIjSul6Av1lgaCvNI7zyVSTt5N62wGBdcD2mfUC~erwTq1Jl2PvvtJPJKlqdC06d8YRflNvmxoikaegOLYmtH738bSrnfGrHnvmFC8jRaUQqvWVregRXbm9J0QAi6GaqiXKmbmnQ__&Key-Pair-Id=K1YS7LZGUP96OI",
         description: `

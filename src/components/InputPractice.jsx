@@ -5,12 +5,12 @@ import Button from "./Button";
 import { selectPractice } from "../features/meditationSlice";
 
 function InputPractice() {
-  const { data } = useSelector((store) => store.meditation);
+  const { practiceData } = useSelector((store) => store.meditation);
   const dispatch = useDispatch();
 
   return (
     <div className="flex items-center justify-center">
-      {data.map((practice) => (
+      {practiceData.map((practice) => (
         <Button
           styled="secondary"
           key={practice.name}

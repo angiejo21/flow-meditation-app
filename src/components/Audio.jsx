@@ -13,7 +13,6 @@ function Audio({ isPlaying, volume, src, isReset, loop }) {
         audioElement.pause();
         if (isReset) audioElement.currentTime = 0;
       }
-
       audioElement.volume = volume;
     },
     [isPlaying, volume, isReset],

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from "./Button";
-import { set } from "../features/timerSlice";
+import { setTimer } from "../features/timerSlice";
 
 function ButtonStart() {
   const { seconds } = useSelector(
@@ -13,7 +13,7 @@ function ButtonStart() {
   const navigate = useNavigate();
 
   function handleStart() {
-    dispatch(set(seconds));
+    dispatch(setTimer(seconds));
     navigate("/practice");
   }
 

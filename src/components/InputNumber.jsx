@@ -5,7 +5,9 @@ import Button from "./Button";
 import { selectDuration } from "../features/meditationSlice";
 
 function InputNumber() {
-  const { selectedExercise } = useSelector((state) => state.meditation);
+  const { selectedExercise, meditationInputShortcuts } = useSelector(
+    (state) => state.meditation,
+  );
   const dispatch = useDispatch();
 
   const duration = selectedExercise.id.startsWith("M")
@@ -13,13 +15,13 @@ function InputNumber() {
     : selectedExercise.duration.seconds;
 
   const step = selectedExercise.step || 1;
-  const meditationShortcuts = [5, 10, 15];
+  const isMeditation = selectedExercise.id.startsWith("M");
 
   return (
     <div className="flex flex-wrap items-center gap-2">
       <div className="flex items-center">
         <label className="pr-2 font-heading text-slate-600 dark:text-slate-300">
-          {selectedExercise.id.startsWith("M") ? "Minutes" : "Seconds"}
+          {isMeditation ? "Minutes" : "Seconds"}
         </label>
         <div className="relative">
           <input
@@ -41,7 +43,7 @@ function InputNumber() {
             +
           </Button>
         </div>
-        {selectedExercise.id.startsWith("B") && (
+        {!isMeditation && (
           <p className="pl-2 font-heading text-slate-600 dark:text-slate-300">
             {selectedExercise.reps} reps
           </p>
@@ -49,9 +51,9 @@ function InputNumber() {
       </div>
 
       <div className="flex w-full justify-center sm:w-auto sm:flex-1 ">
-        {selectedExercise.id.startsWith("M") && (
+        {isMeditation && (
           <>
-            {meditationShortcuts.map((option) => (
+            {meditationInputShortcuts.map((option) => (
               <Button
                 styled="inputNumber"
                 onClick={() => dispatch(selectDuration(duration + option))}

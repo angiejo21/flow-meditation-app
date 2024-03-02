@@ -4,7 +4,7 @@ import { FaStop, FaPlay, FaPause } from "react-icons/fa";
 import Button from "../components/Button";
 import Countdown from "../components/Countdown";
 
-import { playPauseTimer, reset } from "../features/timerSlice";
+import { playPauseTimer, resetTimer } from "../features/timerSlice";
 import {
   playPauseMeditation,
   resetMeditation,
@@ -19,8 +19,8 @@ function Timer() {
   } = useSelector((store) => store.meditation.selectedExercise);
   const dispatch = useDispatch();
 
-  function resetTimer() {
-    dispatch(reset(seconds));
+  function resetPractise() {
+    dispatch(resetTimer(seconds));
     if (id.startsWith("B")) dispatch(resetRepetition());
     if (id.startsWith("M")) dispatch(resetMeditation());
   }
@@ -38,7 +38,7 @@ function Timer() {
           {isTimerOn ? <FaPause /> : <FaPlay />}
         </Button>
 
-        <Button styled="reset" onClick={() => resetTimer()}>
+        <Button styled="reset" onClick={() => resetPractise()}>
           <FaStop />
         </Button>
       </div>

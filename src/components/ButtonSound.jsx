@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 
 import Button from "./Button";
-import { changeVolume, togglePlay } from "../features/soundSlice";
+import { changeVolume, togglePlaySound } from "../features/soundSlice";
 import { soundDataRender } from "../data/soundData";
 
 function ButtonSound({ sound }) {
@@ -9,7 +9,7 @@ function ButtonSound({ sound }) {
   const icon = soundDataRender.find((el) => el.name === sound.name).icon;
 
   function handleSound(soundName) {
-    dispatch(togglePlay(soundName));
+    dispatch(togglePlaySound(soundName));
   }
 
   function handleVolume(value, soundName) {
@@ -17,7 +17,7 @@ function ButtonSound({ sound }) {
   }
 
   return (
-    <div className="flex flex-col w-20 items-center justify-start md:w-24 lg:w-32">
+    <div className="flex w-20 flex-col items-center justify-start md:w-24 lg:w-32">
       <Button
         styled={sound.isPlaying ? "soundOn" : "sound"}
         onClick={() => handleSound(sound.name)}
@@ -36,7 +36,7 @@ function ButtonSound({ sound }) {
             className="w-full accent-teal-600 dark:accent-teal-500"
           />
         ) : (
-          <p className="font-heading text-center text-xs md:text-lg text-teal-800 dark:text-teal-100">
+          <p className="text-center font-heading text-xs text-teal-800 dark:text-teal-100 md:text-lg">
             {sound.name}
           </p>
         )}

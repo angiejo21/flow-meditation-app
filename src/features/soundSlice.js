@@ -3,24 +3,22 @@ import { soundData } from "../data/soundData";
 
 const initialState = {
   soundData,
-  selectedSounds: [],
 };
 
 const soundSlice = createSlice({
   name: "sound",
   initialState,
   reducers: {
-    togglePlay(state, action) {
-      state.soundData.filter((el) => el.name === action.payload)[0].isPlaying =
-        !state.soundData.filter((el) => el.name === action.payload)[0]
-          .isPlaying;
+    togglePlaySound(state, action) {
+      const sound = state.soundData.find((el) => el.name === action.payload);
+      sound.isPlaying = !sound.isPlaying;
     },
     changeVolume(state, action) {
-      state.soundData.filter(
+      state.soundData.find(
         (el) => el.name === action.payload.soundName,
-      )[0].volume = action.payload.value;
+      ).volume = action.payload.value;
     },
-    switchOffMusic(state, action) {
+    switchOffSound(state, action) {
       state.soundData.forEach((el) => {
         if (el.isPlaying) {
           el.isPlaying = false;
@@ -31,6 +29,7 @@ const soundSlice = createSlice({
   },
 });
 
-export const { togglePlay, changeVolume, switchOffMusic } = soundSlice.actions;
+export const { togglePlaySound, changeVolume, switchOffSound } =
+  soundSlice.actions;
 
 export default soundSlice.reducer;

@@ -21,7 +21,7 @@ function InputSelect() {
       >
         {list.map((option) => (
           <option key={option.id} value={option.id}>
-            {option.name}
+            {`${option.name} ${option.id !== "M00" ? `(${option.duration.minutes} min)` : ""}`}
           </option>
         ))}
       </select>
