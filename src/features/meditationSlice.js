@@ -16,6 +16,11 @@ const meditationSlice = createSlice({
     //M + B - definire il tipo di pratica
     selectPractice(state, action) {
       state.selectedPractice = action.payload;
+      state.practiceData.forEach((el) =>
+        el.name === action.payload.name
+          ? (el.isSelected = true)
+          : (el.isSelected = false),
+      );
       state.selectedExercise = state.selectedPractice.list[0];
     },
     //M + B - scegliere il tipo di esercizio

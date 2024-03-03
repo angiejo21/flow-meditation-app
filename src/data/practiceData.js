@@ -11,6 +11,7 @@ const UCLAhealth = `
 export const practiceData = [
   {
     name: "meditation",
+    isSelected: false,
     list: [
       {
         id: "M00",
@@ -107,10 +108,11 @@ export const practiceData = [
 
   {
     name: "breathing",
+    isSelected: false,
     list: [
       {
         id: "B00",
-        name: "4-4-4 Breathing",
+        name: "4-4-4-4 Breathing",
         duration: {
           minutes: 16 * DEFAULT_REPETITIONS * 60,
           seconds: 16 * DEFAULT_REPETITIONS,
@@ -124,7 +126,7 @@ export const practiceData = [
         step: 16,
         reps: DEFAULT_REPETITIONS,
         description:
-          "Inhale deeply for 4 counts, hold for 4, exhale for 4. Calms the mind, enhances focus, reduces stress. It's a foundational practice for mindfulness",
+          "Inhale deeply for 4 counts, hold for 4, exhale for 4, hold again for 4. Calms the mind, enhances focus, reduces stress. It's a foundational practice for mindfulness",
       },
       {
         id: "B01",
