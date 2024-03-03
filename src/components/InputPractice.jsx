@@ -6,7 +6,6 @@ import { selectPractice } from "../features/meditationSlice";
 
 function InputPractice() {
   const { practiceData } = useSelector((store) => store.meditation);
-  console.log(practiceData);
   const dispatch = useDispatch();
 
   return (
