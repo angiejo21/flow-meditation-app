@@ -14,8 +14,8 @@ function PageNotFound() {
           image={questionSvg}
           alt="Two people on the sides of a big question mark"
         />
-        <div className="my-4 text-center text-slate-950 dark:text-teal-100">
-          <p>
+        <div>
+          <p className="my-4 text-center text-slate-950 dark:text-teal-100">
             We&apos;re sorry, we can&apos;t find what you&apos;re looking for.
           </p>
         </div>
